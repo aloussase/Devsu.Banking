@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devsu.Banking.Accounts", "Devsu.Banking.Accounts\Devsu.Banking.Accounts.csproj", "{1C289CDA-D3C8-4676-904B-812C90755E5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devsu.Banking.Clients", "Devsu.Banking.Clients\Devsu.Banking.Clients.csproj", "{F9B2A96D-F8E5-4964-A0E4-2DCFE57A4366}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devsu.Banking.IntegrationTests", "Devsu.Banking.IntegrationTests\Devsu.Banking.IntegrationTests.csproj", "{AF0917EA-3DCB-4C60-B1D7-89EF95E9786B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devsu.Banking.UnitTests", "Devsu.Banking.UnitTests\Devsu.Banking.UnitTests.csproj", "{A3BD4560-370D-41CA-AED5-193F59A65462}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C289CDA-D3C8-4676-904B-812C90755E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C289CDA-D3C8-4676-904B-812C90755E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C289CDA-D3C8-4676-904B-812C90755E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C289CDA-D3C8-4676-904B-812C90755E5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9B2A96D-F8E5-4964-A0E4-2DCFE57A4366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B2A96D-F8E5-4964-A0E4-2DCFE57A4366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B2A96D-F8E5-4964-A0E4-2DCFE57A4366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B2A96D-F8E5-4964-A0E4-2DCFE57A4366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF0917EA-3DCB-4C60-B1D7-89EF95E9786B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF0917EA-3DCB-4C60-B1D7-89EF95E9786B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF0917EA-3DCB-4C60-B1D7-89EF95E9786B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF0917EA-3DCB-4C60-B1D7-89EF95E9786B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3BD4560-370D-41CA-AED5-193F59A65462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3BD4560-370D-41CA-AED5-193F59A65462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3BD4560-370D-41CA-AED5-193F59A65462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3BD4560-370D-41CA-AED5-193F59A65462}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
