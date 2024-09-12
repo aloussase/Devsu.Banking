@@ -4,6 +4,24 @@ Banking system that allows users to create accounts and perform transactions on 
 
 ## Running the project
 
+## Architecture
+
+The project is composed of three services:
+
+- A clients service, which allows CRUD operations over clients
+- An accounts service, which allows CRUD operations over accounts
+- A reports service, which allows generating reports over transactions
+
+Each service can be independently deployed and each one has its own database. This means that we lose referential
+integrity in the data. Patterns like sagas or eventual consistency could be used to solve this problem, but
+it would have been way overkill for this project.
+
+Communication between the services occurs through HTTP, since as explained in "Missing Features" section,
+there was no need for asynchronous communication.
+
+Lastly, all three services are Dockerized and may be run using a single command, as explained in the "Running the
+project" section.
+
 ## Features
 
 - All basic features listed in the requirements, except for those listed in the "Missing Features" section.
@@ -13,6 +31,11 @@ Banking system that allows users to create accounts and perform transactions on 
 
 I've skipped implementing some features because I had limited time to complete the project. Some of this include:
 patching and updating entities other than clients and client authentication.
+
+Also, the requirements specified that there should be asynchronous communication between the different services, but
+I did not find the need to do so, as I only needed to make a couple HTTP calls between them when generating the reports.
+If there really was the need, I would have used some sort of message queue like SQS or RabbitMQ, or a PubSub service
+like Redis.
 
 ## Technical Considerations
 
