@@ -8,19 +8,19 @@ public class ClienteDto
     public int Id { get; set; }
 
     [JsonPropertyName("nombre")]
-    public string? Nombre { get; set; }
+    public required string Nombre { get; set; }
 
     [JsonPropertyName("direccion")]
-    public string? Direccion { get; set; }
+    public required string Direccion { get; set; }
 
     [JsonPropertyName("telefono")]
-    public string? Telefono { get; set; }
+    public required string Telefono { get; set; }
 
     [JsonPropertyName("contrasena")]
-    public string? Contrasena { get; set; }
+    public required string Contrasena { get; set; }
 
     [JsonPropertyName("estado")]
-    public bool Estado { get; set; }
+    public required bool Estado { get; set; }
 
     [JsonPropertyName("genero")]
     public string? Genero { get; set; }

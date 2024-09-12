@@ -1,8 +1,8 @@
 ﻿namespace Devsu.Banking.Clients.Models;
 
-public class Cliente: Persona
+public class Cliente : Persona
 {
-   public string? ClienteId { get; set; }
-   public required string Contrasena { get; set; }
-   public required bool Estado { get; set; }
+    public string? ClienteId { get; set; }
+    public string Contrasena { get; set; } = "secret";
+    public bool Estado { get; set; } = true;
 }
