@@ -6,12 +6,21 @@ using MediatR;
 
 namespace Devsu.Banking.Clients.Commands;
 
-public class CreateClienteCommand: IRequest<ErrorOr<Cliente>>
+public class CreateClienteCommand : IRequest<ErrorOr<Cliente>>
 {
-    public required string Nombre { get; set; }
-    public required string Direccion { get; set; }
-    public required string Telefono { get; set; }
-    public required string Contrasena { get; set; }
+    public CreateClienteCommand(string nombre, string direccion, string telefono, string contrasena, bool estado)
+    {
+        Nombre = nombre;
+        Direccion = direccion;
+        Telefono = telefono;
+        Contrasena = contrasena;
+        Estado = estado;
+    }
+
+    public string Nombre { get; set; }
+    public string Direccion { get; set; }
+    public string Telefono { get; set; }
+    public string Contrasena { get; set; }
     public bool Estado { get; set; }
 
     public class Handler : IRequestHandler<CreateClienteCommand, ErrorOr<Cliente>>
