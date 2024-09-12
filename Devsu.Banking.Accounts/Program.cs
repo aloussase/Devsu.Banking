@@ -1,6 +1,24 @@
+using Devsu.Banking.Accounts.Database;
+using Devsu.Banking.Accounts.Mappers;
+using Devsu.Banking.Accounts.Repository;
+using Devsu.Banking.Accounts.Repository.Impl;
+using FastEndpoints;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddFastEndpoints();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
+
+builder.Services.AddDbContext<AccountsDbContext>();
+
+builder.Services.AddScoped<ICuentasRepository, CuentasRepository>();
+builder.Services.AddScoped<IMovimientosRepository, MovimientosRepository>();
+
+builder.Services.AddSingleton<CuentasMapper>();
+builder.Services.AddSingleton<MovimientosMapper>();
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.UseFastEndpoints();
 
 app.Run();
