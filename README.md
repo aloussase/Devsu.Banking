@@ -6,6 +6,7 @@ Banking system that allows users to create accounts and perform transactions on 
 
 ## Features
 
+- All basic features listed in the requirements, except for those listed in the "Missing Features" section.
 - The project can be easily deployed using the provided Docker configuration.
 
 ## Missing Features
@@ -31,6 +32,7 @@ patching and updating entities other than clients and client authentication.
 - Error handling is done using the [ErrorOr](https://github.com/amantinband/error-or) library.
 - Error handling is sparse, taking into account only scenarios that were explicitly mentioned in the requirements.
 - In a real project I would have implemented logging with Serilog or something similar.
+- I am treating the client name as if it were a primary key because that's what the examples show.
 
 ## License
 
