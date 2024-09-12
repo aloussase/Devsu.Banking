@@ -14,8 +14,4 @@
         <PackageReference Include="Riok.Mapperly" Version="3.6.0"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <Folder Include="Queries\"/>
-    </ItemGroup>
-
 </Project>

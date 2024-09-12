@@ -25,14 +25,15 @@ public class CuentasRepository : ICuentasRepository
         return _mapper.CuentaEntityToCuenta(result.Entity);
     }
 
-    public Task<IEnumerable<Cuenta>> GetAll(CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
-    }
-
     public async Task<Cuenta?> GetByNumeroCuenta(string numeroCuenta, CancellationToken cancellationToken = default)
     {
         var entity = await _db.Cuentas.FirstOrDefaultAsync(x => x.Numero == numeroCuenta, cancellationToken);
+        return entity is null ? null : _mapper.CuentaEntityToCuenta(entity);
+    }
+
+    public async Task<Cuenta?> GetByNombreCliente(string nombreCliente, CancellationToken cancellationToken = default)
+    {
+        var entity = await _db.Cuentas.FirstOrDefaultAsync(x => x.NombreCliente == nombreCliente, cancellationToken);
         return entity is null ? null : _mapper.CuentaEntityToCuenta(entity);
     }
 }

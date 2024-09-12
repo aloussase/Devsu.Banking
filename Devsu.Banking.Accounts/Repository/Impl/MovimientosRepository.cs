@@ -30,8 +30,14 @@ public class MovimientosRepository : IMovimientosRepository
         return _mapper.MovimientoEntityToMovimiento(result.Entity);
     }
 
-    public Task<IEnumerable<Movimiento>> GetAll(CancellationToken cancellationToken = default)
+    public async Task<IEnumerable<Movimiento>> GetByCuentaAndFecha(
+        string numeroCuenta,
+        DateTime fecha,
+        CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        return await _db.Movimientos
+            .Where(x => x.NumeroCuenta == numeroCuenta && x.Fecha >= fecha)
+            .Select(x => _mapper.MovimientoEntityToMovimiento(x))
+            .ToListAsync(cancellationToken);
     }
 }

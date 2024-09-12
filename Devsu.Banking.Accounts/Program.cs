@@ -16,6 +16,7 @@ builder.Services.AddScoped<IMovimientosRepository, MovimientosRepository>();
 
 builder.Services.AddSingleton<CuentasMapper>();
 builder.Services.AddSingleton<MovimientosMapper>();
+builder.Services.AddSingleton<EstadoCuentaMapper>();
 
 var app = builder.Build();
 

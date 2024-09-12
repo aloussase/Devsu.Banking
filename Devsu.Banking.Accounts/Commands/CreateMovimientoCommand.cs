@@ -43,7 +43,7 @@ public class CreateMovimientoCommand : IRequest<ErrorOr<Movimiento>>
             if (command.Tipo is not (Movimiento.TIPO_RETIRO or Movimiento.TIPO_DEPOSITO))
                 return Error.Validation(description: "Tipo de movimiento no válido");
 
-            if (command.Tipo == Movimiento.TIPO_RETIRO && cuenta.Saldo < command.Valor)
+            if (command.Tipo == Movimiento.TIPO_RETIRO && cuenta.Saldo - decimal.Abs(command.Valor) < 0)
                 return Error.Validation(description: "Saldo no disponible");
 
             var movimientoEntity = _mapper.CreateMovimientoCommandToMovimientoEntity(command);

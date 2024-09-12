@@ -6,7 +6,7 @@ namespace Devsu.Banking.Accounts.Entities;
 public class MovimientoEntity
 {
     public int Id { get; set; }
-    public DateTime Fecha { get; set; }
+    public DateTime Fecha { get; set; } = DateTime.Now.ToUniversalTime();
     public decimal Valor { get; set; }
     public decimal Saldo { get; set; }
     public string Tipo { get; set; } = null!;
