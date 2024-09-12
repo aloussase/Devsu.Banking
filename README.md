@@ -10,6 +10,7 @@ Banking system that allows users to create accounts and perform transactions on 
 
 ## Technical Considerations
 
+- Passwords are stored in plain text. Obviously in a real application they would be hashed.
 - A vertical slice architecture was used, as I've found it to be the most efficient way to organize code.
   I personally prefer it over Clean Architecture, but either choice would have been fine.
 - Inheritance was used on DTOs and entities in order to save time typing the same properties.
