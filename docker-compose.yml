@@ -5,8 +5,19 @@ services:
     ports:
       - "5432:5432"
     environment:
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: postgres
-        POSTGRES_DB: clientsdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: clientsdb
     volumes:
       - ./BaseDatosClientes.sql:/docker-entrypoint-initdb.d/BaseDatosClientes.sql
+
+  accountsdb:
+    image: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: accountsdb
+    volumes:
+      - ./BaseDatosCuentas.sql:/docker-entrypoint-initdb.d/BaseDatosCuentas.sql
