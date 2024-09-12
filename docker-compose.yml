@@ -1,5 +1,15 @@
 version: "3"
 services:
+  clientsapi:
+    build:
+      context: Devsu.Banking.Clients
+    environment:
+      PORT: 5000
+      Urls: "http://0.0.0.0:5000"
+      ConnectionStrings__DefaultConnection: "Host=clientsdb;Username=postgres;Password=postgres;Database=clientsdb;"
+    ports:
+      - "5000:5000"
+
   clientsdb:
     image: postgres
     ports:
@@ -10,6 +20,16 @@ services:
       POSTGRES_DB: clientsdb
     volumes:
       - ./BaseDatosClientes.sql:/docker-entrypoint-initdb.d/BaseDatosClientes.sql
+
+  accountsapi:
+    build:
+      context: Devsu.Banking.Accounts
+    environment:
+      PORT: 5001
+      Urls: "http://0.0.0.0:5001"
+      ConnectionStrings__DefaultConnection: "Host=accountsdb;Username=postgres;Password=postgres;Database=accountsdb;"
+    ports:
+      - "5001:5001"
 
   accountsdb:
     image: postgres

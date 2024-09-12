@@ -6,6 +6,8 @@ using FastEndpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddEnvironmentVariables();
+
 builder.Services.AddFastEndpoints();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
 

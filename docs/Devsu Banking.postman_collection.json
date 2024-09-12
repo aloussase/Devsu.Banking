@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "2f20a8d8-fcaf-4086-b0a3-8f82e8c7e5d6",
+		"name": "Devsu Banking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38292590",
+		"_collection_link": "https://aloussasepersonal.postman.co/workspace/Team-Workspace~778d1fe7-2e39-492b-8c68-bb37e02028ec/collection/38292590-2f20a8d8-fcaf-4086-b0a3-8f82e8c7e5d6?action=share&source=collection_link&creator=38292590"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Crear un cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"{{$randomFullName}}\",\r\n    \"direccion\": \"{{$randomCountry}}\",\r\n    \"telefono\": \"{{$randomPhoneNumber}}\",\r\n    \"contrasena\": \"{{$randomPassword}}\",\r\n    \"estado\": {{$randomBoolean}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar un cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"{{$randomFullName}}\",\r\n    \"direccion\": \"{{$randomCountry}}\",\r\n    \"telefono\": \"{{$randomPhoneNumber}}\",\r\n    \"contrasena\": \"{{$randomPassword}}\",\r\n    \"estado\": {{$randomBoolean}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/clientes/Jennie Dooley",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"clientes",
+								"Jennie Dooley"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/clientes/Joyce Kerluke",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"clientes",
+								"Joyce Kerluke"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuentas",
+			"item": [
+				{
+					"name": "Crear una cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"Corriente\",\r\n    \"saldo_inicial\": {{$randomInt}},\r\n    \"estado\": true,\r\n    \"nombre_cliente\": \"{{$randomFullName}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/cuentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver estado de cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/reportes?Fecha=12/09/2024&Cliente=Kristie Nolan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "Fecha",
+									"value": "12/09/2024"
+								},
+								{
+									"key": "Cliente",
+									"value": "Kristie Nolan"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "Crear un movimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": 100,\r\n    \"tipo\": \"Deposito\",\r\n    \"numero_cuenta\": \"da8a6aa3-cf82-4f3a-ba88-b55545ec8cb9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
